@@ -1,8 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Switch } from "react-router-dom";
 import React from "react";
 import TestPage1 from "./pages/TestPage1";
 import TestPage2 from "./pages/TestPage2";
-import HomePage from "./pages/HomPage";
+import HomePage  from "./pages/HomPage";
 
 const App = () => {
     return(
@@ -17,8 +17,8 @@ const App = () => {
             */}
             <Routes>
                 <Route path="/" element = {<HomePage></HomePage>}></Route>
-                <Route path="/TestPage1" element = {<TestPage1></TestPage1>}></Route>
-                <Route path="/TestPage2" element = {<TestPage2></TestPage2>}></Route>
+                <Route path="/TestPage1/" element = {<TestPage1></TestPage1>}></Route>
+                <Route path="/TestPage2/" element = {<TestPage2></TestPage2>}></Route>
             </Routes>
         </>
     )
