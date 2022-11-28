@@ -3,6 +3,11 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
+const DotenvWebpackPlugin = require('dotenv-webpack');
+//const dotenv = require('dotenv');
+//dotenv.config();
+//console.log("test : ", process)
+
 
 module.exports = {
     mode: process.env.mode,
@@ -72,12 +77,18 @@ module.exports = {
             console.log(TESTVALUE)
             //마치 process.env 안의 값 처럼, 어플리케이션 전체 범위에서 전역변수 처럼 사용 가능.
             */
-        })
+        }),
+        new DotenvWebpackPlugin(),
+        
     ],
     devServer: {
         host: 'localhost',
         port: 3000,
         hot: true,
-        open: true
+        open: true,
+        proxy:{
+            "/api":'http://localhost:8080',
+            changeOrigin:true
+        }
     }
 };
