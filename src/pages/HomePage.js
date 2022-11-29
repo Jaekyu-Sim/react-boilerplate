@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
-import NaverApiMap from "../utils/NaverApiMap"
 const HomePage = () => {
 
     const navigate = useNavigate();
@@ -20,9 +19,6 @@ const HomePage = () => {
             <button onClick={navigateToTestpage2}>
                 To Page 2
             </button>
-            <NaverApiMap>
-                
-            </NaverApiMap>
             
         </div>
     )
